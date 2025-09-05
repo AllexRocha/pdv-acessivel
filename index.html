@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDV Acessível</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDV Acessível</h1>
+            <div class="subtitle">Sistema de Vendas Simplificado</div>
+        </header>
+        
+        <div class="accessibility-controls">
+            <button class="accessibility-button" id="contrastToggle">Alto Contraste</button>
+            <button class="accessibility-button" id="textSizeToggle">Texto Maior</button>
+            <button class="accessibility-button" id="reopenPixConfig">Configurar PIX</button>
+        </div>
+        
+        <!-- Modal de Senha -->
+        <div id="passwordModal" class="modal">
+            <div class="modal-content">
+                <h2>Autenticação Requerida</h2>
+                <p>Para acessar a configuração do PIX, digite a senha:</p>
+                <div class="form-group">
+                    <input type="password" id="passwordInput" placeholder="Digite a senha">
+                </div>
+                <div class="button-group">
+                    <button class="button" id="confirmPassword">Confirmar</button>
+                    <button class="button clear" id="cancelPassword">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="setup-section" id="setupSection">
+            <h2 class="setup-title">Configuração do Comerciante</h2>
+            
+            <div class="config-info">
+                <p>Para gerar QR Codes PIX válidos, é necessário configurar os dados do comerciante.</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="merchantName">Nome do Comerciante:</label>
+                <input type="text" id="merchantName" placeholder="Digite o nome do estabelecimento">
+            </div>
+            
+            <div class="form-group">
+                <label for="merchantCity">Cidade:</label>
+                <input type="text" id="merchantCity" placeholder="Digite a cidade">
+            </div>
+            
+            <div class="form-group">
+                <label for="pixKeyType">Tipo de Chave PIX:</label>
+                <select id="pixKeyType">
+                    <option value="CPF">CPF</option>
+                    <option value="CNPJ">CNPJ</option>
+                    <option value="PHONE">Telefone</option>
+                    <option value="EMAIL">E-mail</option>
+                    <option value="RANDOM">Chave Aleatória</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="pixKey">Chave PIX:</label>
+                <input type="text" id="pixKey" placeholder="Digite a chave PIX">
+            </div>
+            
+            <div class="button-group">
+                <button class="button save" id="saveConfig">Salvar Configuração</button>
+            </div>
+        </div>
+        
+        <div class="products-header">
+            <h2 class="products-title">Produtos</h2>
+            <div class="pagination-controls">
+                <button class="pagination-button" id="prevPage">Anterior</button>
+                <span class="page-info" id="pageInfo">Página 1 de 1</span>
+                <button class="pagination-button" id="nextPage">Próxima</button>
+            </div>
+        </div>
+        
+        <div class="product-grid" id="productGrid">
+            <!-- Os produtos serão carregados via JavaScript -->
+        </div>
+        
+        <div class="cart-section">
+            <h2 class="cart-title">Carrinho de Compras</h2>
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart-message">Nenhum produto adicionado ainda.</div>
+            </div>
+            <div class="cart-total" id="cartTotal">Total: R$ 0,00</div>
+            
+            <div class="button-group">
+                <button class="button clear" id="clearCart">Limpar</button>
+                <button class="button generate" id="generatePix">Gerar PIX</button>
+            </div>
+        </div>
+        
+        <div class="pix-section" id="pixSection" style="display: none;">
+            <h2 class="cart-title">Pagamento via PIX</h2>
+            <div id="qrcode"></div>
+            <div class="instructions">
+                <p>1. Peça para o cliente escanear o QR Code acima</p>
+                <p>2. Aguarde a confirmação de pagamento no seu celular</p>
+                <p>3. Somente confirme a venda após verificar a notificação</p>
+            </div>
+            <button class="button" id="newSale">Nova Venda</button>
+        </div>
+        
+        <footer>
+            <p>Projeto de Extensão - PDV Acessível | Desenvolvido para inclusão digital de comerciantes</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
