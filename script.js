@@ -1,26 +1,65 @@
 // Dados dos produtos (seriam personalizados para o comerciante)
 const products = [
-    { id: 1, name: "Arroz 5kg", price: 22.90, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853027/arroz_cristal_5kg-4c4df5c5d8.jpg" },
-    { id: 2, name: "Feijão 1kg", price: 8.50, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853030/feijao_carioca-3c5d2f6b6a.jpg" },
-    { id: 3, name: "Açúcar 1kg", price: 4.25, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853032/acucar_cristal-3c5d2f6b6a.jpg" },
-    { id: 4, name: "Café 500g", price: 12.90, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853034/cafe_melitta-3c5d2f6b6a.jpg" },
-    { id: 5, name: "Óleo 900ml", price: 7.80, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853036/oleo_soja-3c5d2f6b6a.jpg" },
-    { id: 6, name: "Sal 1kg", price: 3.20, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853038/sal_refinado-3c5d2f6b6a.jpg" },
-    { id: 7, name: "Farinha 1kg", price: 4.50, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853040/farinha_trigo-3c5d2f6b6a.jpg" },
-    { id: 8, name: "Macarrão 500g", price: 4.30, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853042/macarrao_parafuso-3c5d2f6b6a.jpg" },
-    { id: 9, name: "Leite 1L", price: 5.20, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853044/leite_uht-3c5d2f6b6a.jpg" },
-    { id: 10, name: "Manteiga 200g", price: 9.80, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853046/manteiga-3c5d2f6b6a.jpg" },
-    { id: 11, name: "Ovo (dúzia)", price: 10.00, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853048/ovos-3c5d2f6b6a.jpg" },
-    { id: 12, name: "Pão (unidade)", price: 0.70, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853050/pao_frances-3c5d2f6b6a.jpg" },
-    { id: 13, name: "Queijo 500g", price: 22.00, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853052/queijo_mussarela-3c5d2f6b6a.jpg" },
-    { id: 14, name: "Presunto 500g", price: 18.00, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853054/presunto-3c5d2f6b6a.jpg" },
-    { id: 15, name: "Refrigerante 2L", price: 9.50, image: "https://cdn.awsli.com.br/600x450/0/0/produto/3853056/refrigerante_cola-3c5d2f6b6a.jpg" },
-    { id: 16, name: "Sabão em Pó", price: 12.00, image: "https://example.com/sabao.jpg" },
-    { id: 17, name: "Detergente", price: 3.50, image: "https://example.com/detergente.jpg" },
-    { id: 18, name: "Shampoo", price: 15.00, image: "https://example.com/shampoo.jpg" },
-    { id: 19, name: "Condicionador", price: 16.00, image: "https://example.com/condicionador.jpg" },
-    { id: 20, name: "Creme Dental", price: 5.50, image: "https://example.com/creme-dental.jpg" }
+  // 🥫 Alimentos
+  { id: 1, name: "Arroz Flora - 1kg", price: 5.90, image: "images/arroz_quilo.jpg" },
+  { id: 2, name: "Arroz Flora - 5kg", price: 24.90, image: "images/arroz_5kg.jpg" },
+  { id: 3, name: "Feijão Mestre Cuca - 1kg", price: 6.50, image: "images/feijao.jpg" },
+  { id: 4, name: "Farinha de Milho Flocada Bonomilho - 500g", price: 3.80, image: "images/cuzcuz.jpg" },
+  { id: 5, name: "Milho verde em conserva Olé", price: 4.80, image: "images/milho_lata.jpg" },
+  { id: 6, name: "Nissin Lámen sabor carne", price: 2.20, image: "images/miojo-carne.jpg" },
+  { id: 7, name: "Creme de leite LeitBom - 200g", price: 3.50, image: "images/creme__leite.jpg" },
+  { id: 8, name: "Leite Condensado Piracanjuba - 395g", price: 5.90, image: "images/consensado.jpg" },
+  { id: 9, name: "Doce Pé de Moça unid", price: 1.20, image: "images/doce.jpg" },
+  { id: 10, name: "Tempero Knorr Meu Segredo", price: 3.50, image: "images/knor.jpg" },
+  { id: 11, name: "Óleo de Soja Soya - 900 ml", price: 7.20, image: "images/olho_soja.jpg" },
+  { id: 12, name: "Sal Iodado Cristal 1kg", price: 3.50, image: "images/sal.jpg" },
+  { id: 13, name: "Açúcar Cristal Imperial - 5kg", price: 12.90, image: "images/acucar.jpg" },
+  { id: 14, name: "Sardinha Gomes da Costa", price: 7.90, image: "images/sardinha.jpg" },
+
+  // 🥤 Bebidas
+  { id: 15, name: "Guaraná Kuat - 1,5 L", price: 6.90, image: "images/kuat.jpg" },
+  { id: 16, name: "Coca-Cola Retornável Zero - 2L", price: 8.90, image: "images/coca_retornavel_zero.jpg" },
+  { id: 17, name: "Coca-Cola Lata - 310ml", price: 3.50, image: "images/coca_lata.jpg" },
+  { id: 18, name: "Cerveja Kaiser - 350 ml", price: 3.20, image: "images/kaiser.jpg" },
+  { id: 19, name: "Cerveja Amstel Lata - 250ml", price: 3.50, image: "images/amstel.jpg" },
+  { id: 20, name: "Corote vários sabores - 500ml", price: 4.50, image: "images/corote.jpg" },
+  { id: 21, name: "Água Mineral Crystal - 350ml", price: 2.20, image: "images/agua_mineral.jpg" },
+
+  // 🧼 Higiene pessoal
+  { id: 22, name: "Sabonete vários tipos", price: 2.80, image: "images/sabonete.jpg" },
+  { id: 23, name: "Creme dental Sorriso", price: 3.90, image: "images/pasta.jpg" },
+  { id: 24, name: "Papel Higiênico 4 rolos", price: 6.50, image: "images/papel_higienico.jpg" },
+  { id: 25, name: "Pente Várias Cores", price: 1.50, image: "images/pente.jpg" },
+  { id: 26, name: "Absorvente Cottonbaby", price: 4.90, image: "images/absorvente.jpg" },
+
+  // 🧽 Limpeza
+  { id: 27, name: "Sabão em pó ASSIM 800g", price: 9.90, image: "images/sabao_po.jpg" },
+  { id: 28, name: "Detergente Ypê Neutro", price: 2.50, image: "images/detergente.jpg" },
+  { id: 29, name: "Esponja de aço Bombril", price: 2.80, image: "images/bombril.jpg" },
+
+  // 🍬 Doces e snacks
+  { id: 30, name: "Pirulito Pop Vibe", price: 0.50, image: "images/pop.jpg" },
+  { id: 31, name: "Pirulito Blong", price: 0.80, image: "images/pirulito.jpg" },
+  { id: 32, name: "Chiclete Blong Energy", price: 0.80, image: "images/blong-energetico.jpg" },
+  { id: 33, name: "Chiclete Blong Framboesa", price: 0.80, image: "images/blong_framboesa.jpg" },
+  { id: 34, name: "Biscoito Recheado Bauducco", price: 2.50, image: "images/biscioito.jpg" },
+  { id: 35, name: "Batata Palha Yoki", price: 6.90, image: "images/batata_palha.jpg" },
+  { id: 36, name: "Super Azedinhos Docile", price: 1.00, image: "images/azedinho.jpg" },
+
+  // 🖊️ Papelaria e escolares
+  { id: 37, name: "Papel Ofício Chamex - 500 folhas", price: 22.00, image: "images/chamex.jpg" },
+  { id: 38, name: "Cola Branca Escolar - 40g", price: 2.00, image: "images/cola_papel.jpg" },
+  { id: 39, name: "Tinta guache Acrilex - 6 unid", price: 14.90, image: "images/guache.jpg" },
+  { id: 40, name: "Caneta Bic Azul", price: 1.50, image: "images/canetas.jpg" },
+  { id: 41, name: "Borracha Mercur", price: 1.20, image: "images/borrachas.jpg" },
+
+  // 🔧 Utilidades domésticas
+  { id: 42, name: "Pilha AAA 199 - 4 Unid", price: 8.90, image: "images/pilhas.jpg" },
+  { id: 43, name: "Fósforo Guarany 10 caixas", price: 3.90, image: "images/fosforo_guarany.jpg" },
+  { id: 44, name: "Carretel de Linha Corrente - 500m", price: 5.00, image: "images/carretel.jpg" }
 ];
+
+
 
 // Variáveis globais
 let cart = [];

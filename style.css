@@ -323,7 +323,20 @@ footer {
     color: #fff;
     border: 1px solid #fff;
 }
+.high-contrast-mode .product-price {
+    color: yellow;
+    text-shadow: 1px 1px 2px black;
+}
 
+.high-contrast-mode .cart-title {
+    color: yellow;
+    text-shadow: 1px 1px 2px black;
+}
+
+.high-contrast-mode .instructions {
+    color: #020202;
+    border: 2px solid #fff;
+}
 .text-large {
     font-size: 24px;
 }
@@ -396,6 +409,7 @@ footer {
     color: white;
     border: 1px solid white;
 }
+
 
 @media (max-width: 480px) {
     .product-grid {
